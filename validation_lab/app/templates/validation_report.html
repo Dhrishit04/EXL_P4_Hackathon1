@@ -1,0 +1,41 @@
+<!-- Self contained printable validation evidence report. -->
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>{{ title }}</title>
+<style>
+body{font:15px/1.55 system-ui,sans-serif;color:#182333;max-width:1050px;margin:40px auto;padding:0 30px}
+h1{font-size:30px;line-height:1.2}h2{font-size:23px;border-bottom:1px solid #ccd4dd;padding-bottom:8px;margin-top:40px}
+h3{font-size:18px;margin-top:25px}h4{font-size:15px}p{margin:12px 0}table{width:100%;border-collapse:collapse;margin:16px 0;font-size:12px;table-layout:fixed}
+td,th{border:1px solid #d9d9d9;text-align:left;padding:9px;overflow-wrap:anywhere;vertical-align:top}th{background:#e1eaf2}tr:nth-child(even){background:#f6f8fa}
+img{max-width:100%;height:auto}figure{margin:25px 0;break-inside:avoid}figcaption{font-size:13px;color:#465466}.warning{border:2px solid #a43e0c;background:#fff2e8;padding:16px}
+.subtitle{font-size:16px;color:#465466}.empty{color:#6b7280}dt{font-weight:600}dd{margin-bottom:10px;overflow-wrap:anywhere}
+@media print{body{margin:0;padding:0;font-size:10pt;max-width:none}h2,h3,h4{break-after:avoid}thead{display:table-header-group}tr{break-inside:avoid}a{color:inherit}table{font-size:8pt}@page{size:A4;margin:18mm}}
+</style></head><body>
+{% macro value(data, depth=3) -%}
+{% if data is mapping %}
+{% for key,item in data.items() %}
+{% if item is mapping or (item is sequence and item is not string) %}
+<h{{ [depth,4]|min }}>{{ label(key) }}</h{{ [depth,4]|min }}>{{ value(item,depth+1) }}
+{% else %}<p><strong>{{ label(key) }}:</strong> {{ display(item) }}</p>{% endif %}
+{% endfor %}
+{% elif data is sequence and data is not string %}
+{% if data and data[0] is mapping %}
+{% set nested = namespace(found=false) %}{% for row in data %}{% for item in row.values() %}{% if item is mapping or (item is sequence and item is not string) %}{% set nested.found = true %}{% endif %}{% endfor %}{% endfor %}
+{% if nested.found %}
+{% for row in data %}<h{{ [depth,4]|min }}>{{ row.get('attribute', row.get('id', 'Entry ' ~ loop.index)) }}</h{{ [depth,4]|min }}>{{ value(row,depth+1) }}{% endfor %}
+{% else %}
+<table><thead><tr>{% for key in data[0] %}<th>{{ label(key) }}</th>{% endfor %}</tr></thead><tbody>
+{% for row in data %}<tr>{% for key in data[0] %}<td>{{ display(row.get(key)) }}</td>{% endfor %}</tr>{% endfor %}
+</tbody></table>
+{% endif %}
+{% else %}<p>{{ data|map('string')|join(', ') if data else 'No entries.' }}</p>{% endif %}
+{% else %}<p class="empty">{{ display(data) }}</p>{% endif %}
+{%- endmacro %}
+<h1>{{ title }}</h1><p class="subtitle">{{ subtitle }}</p><p>Draft validation evidence for independent expert review.</p>
+{% if warnings %}<div class="warning"><strong>Warning: unverified numbers in supplied narrative</strong><ul>{% for warning in warnings %}<li>{{ warning }}</li>{% endfor %}</ul></div>{% endif %}
+{% for block in blocks %}<section><h2>{{ loop.index }} {{ block.title }}</h2>
+{% if block.html %}{{ block.html }}{% endif %}{% if block.text %}<p>{{ block.text }}</p>{% endif %}
+{% if 'data' in block %}{{ value(block.data) }}{% endif %}
+{% for id in block.chart_ids|default([]) %}<figure><figcaption>{{ images[id].title }}</figcaption><img src="{{ images[id].uri }}" alt="{{ images[id].title }}"></figure>{% endfor %}
+</section>{% endfor %}</body></html>

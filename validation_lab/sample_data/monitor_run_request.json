@@ -1,0 +1,20 @@
+{
+  "model_id": "SAMPLE",
+  "reference": {
+    "data_path": "validation_lab/sample_data/dev.csv",
+    "scores_path": "validation_lab/sample_data/scored_dev.csv"
+  },
+  "batches_dir": "artifacts/SAMPLE/monitoring/batches",
+  "id_col": "ID",
+  "target_col": "default_flag",
+  "pd_col": "pd",
+  "score_col": "score",
+  "feature_cols": [
+    "income",
+    "balance",
+    "utilisation",
+    "arrears",
+    "tenure"
+  ],
+  "thresholds": null
+}

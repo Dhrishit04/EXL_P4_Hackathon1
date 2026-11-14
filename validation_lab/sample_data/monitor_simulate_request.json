@@ -1,0 +1,21 @@
+{
+  "model_id": "SAMPLE",
+  "data_path": "validation_lab/sample_data/oot.csv",
+  "scores_path": "validation_lab/sample_data/scored_oot.csv",
+  "id_col": "ID",
+  "target_col": "default_flag",
+  "pd_col": "pd",
+  "score_col": "score",
+  "feature_cols": [
+    "income",
+    "balance",
+    "utilisation",
+    "arrears",
+    "tenure"
+  ],
+  "n_batches": 6,
+  "batch_size": 3000,
+  "drift_start_batch": 4,
+  "drift_strength": 0.5,
+  "seed": 42
+}

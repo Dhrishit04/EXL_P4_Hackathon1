@@ -1,0 +1,30 @@
+{
+  "run_id": "run_SAMPLE_001",
+  "model_id": "SAMPLE",
+  "validation_result_path": "artifacts/SAMPLE/validation/result.json",
+  "inventory_record": {
+    "model_id": "SAMPLE",
+    "model_name": "Synthetic credit demonstration",
+    "tiering": {
+      "tier": "Tier 2"
+    },
+    "purpose": "Synthetic service demonstration only; not a bank model."
+  },
+  "parity_summary": null,
+  "narrative": {
+    "executive_summary": "Narrative pending independent review.",
+    "conceptual_soundness": "Review pending.",
+    "findings_commentary": "Review the computed findings below.",
+    "conclusion": "Pending human review.",
+    "unverified_numbers": []
+  },
+  "sign_off": {
+    "validator_agent_model": "not_used_in_standalone_demo",
+    "human_validator": null,
+    "signed_at": null
+  },
+  "formats": [
+    "html",
+    "docx"
+  ]
+}

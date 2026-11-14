@@ -1,1 +1,0 @@
-# FIXTURE synthetic test placeholder

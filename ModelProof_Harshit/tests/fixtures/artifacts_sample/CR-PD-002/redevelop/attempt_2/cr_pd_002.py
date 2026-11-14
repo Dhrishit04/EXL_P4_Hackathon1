@@ -1,1 +1,0 @@
-# FIXTURE synthetic rebuild placeholder

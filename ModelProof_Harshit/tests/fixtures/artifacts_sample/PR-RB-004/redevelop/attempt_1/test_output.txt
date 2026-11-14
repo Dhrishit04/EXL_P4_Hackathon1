@@ -1,1 +1,0 @@
-FIXTURE FAIL synthetic test output

@@ -1,0 +1,31 @@
+{
+  "run_id": "run_SAMPLE_001",
+  "model_id": "SAMPLE",
+  "model_type": "credit_pd",
+  "data": {
+    "dev_path": "validation_lab/sample_data/dev.csv",
+    "oot_path": "validation_lab/sample_data/oot.csv",
+    "id_col": "ID",
+    "target_col": "default_flag"
+  },
+  "scores": {
+    "dev_path": "validation_lab/sample_data/scored_dev.csv",
+    "oot_path": "validation_lab/sample_data/scored_oot.csv",
+    "pd_col": "pd",
+    "score_col": "score",
+    "decision_col": "decision"
+  },
+  "feature_cols": [
+    "income",
+    "balance",
+    "utilisation",
+    "arrears",
+    "tenure"
+  ],
+  "protected_cols": [
+    "SEX",
+    "AGE_BAND"
+  ],
+  "model_module_path": null,
+  "thresholds": null
+}
