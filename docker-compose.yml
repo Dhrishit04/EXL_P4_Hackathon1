@@ -1,0 +1,51 @@
+# Starts all four ModelPassport services with one command: docker compose up --build
+# Open the dashboard at http://localhost:5173. Settings come from the root .env (copy .env.example).
+x-python-service: &python-service
+  env_file:
+    - path: .env
+      required: false
+  volumes:
+    # Services hand each other repository relative paths, so all three share one artifacts folder.
+    - ./artifacts:/repo/artifacts
+  restart: unless-stopped
+
+services:
+  factory_core:
+    <<: *python-service
+    build: { context: ., dockerfile: factory_core/Dockerfile }
+    ports: ["8000:8000"]
+    environment:
+      REDEV_ENGINE_URL: http://redev_engine:8001
+      VALIDATION_LAB_URL: http://validation_lab:8002
+    volumes:
+      - ./artifacts:/repo/artifacts
+      - ./factory_core/llm_cache:/repo/factory_core/llm_cache
+    depends_on:
+      redev_engine: { condition: service_healthy }
+      validation_lab: { condition: service_healthy }
+
+  redev_engine:
+    <<: *python-service
+    build: { context: ., dockerfile: redev_engine/Dockerfile }
+    ports: ["8001:8001"]
+    volumes:
+      - ./artifacts:/repo/artifacts
+      - ./redev_engine/llm_cache:/repo/redev_engine/llm_cache
+
+  validation_lab:
+    <<: *python-service
+    build: { context: ., dockerfile: validation_lab/Dockerfile }
+    ports: ["8002:8002"]
+
+  factory_console:
+    build:
+      context: .
+      dockerfile: factory_console/Dockerfile
+      args:
+        VITE_API_MODE: ${VITE_API_MODE:-live}
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL:-http://localhost:8000}
+    # factory_core only allows the dashboard origin http://localhost:5173.
+    ports: ["5173:80"]
+    depends_on:
+      factory_core: { condition: service_healthy }
+    restart: unless-stopped

@@ -1,0 +1,50 @@
+{
+  "model_id": "M004",
+  "model_name": "Personal Loan Risk Based Pricing",
+  "model_type": null,
+  "purpose": null,
+  "business_line": "Pricing",
+  "model_owner": "Head of Lending Pricing",
+  "language": "SAS",
+  "algorithm": null,
+  "target_variable": null,
+  "input_variables": [],
+  "outputs": [],
+  "upstream_dependencies": [],
+  "downstream_uses": [],
+  "exposure_gbp_m": 60.0,
+  "regulatory_use": "none",
+  "customer_facing": false,
+  "tiering": null,
+  "doc_status": null,
+  "doc_last_updated": "2019-11-04",
+  "last_code_change": "2022-04-12",
+  "last_validated": "2020-03-30",
+  "next_validation_due": null,
+  "source_files": [
+    {
+      "path": "model_estate/M004_risk_pricing_sas/code/pricing_model.sas",
+      "kind": "code",
+      "lines": 58,
+      "sha256": "9306beaf576623033c2c23c2a54125beedf871a36f87b93e8118d627aa53db9e"
+    },
+    {
+      "path": "model_estate/M004_risk_pricing_sas/docs/model_document_2019.md",
+      "kind": "doc",
+      "lines": 54,
+      "sha256": "e323661700113c4f853fa0a44e33ea4a59afb8e917fac09e61623eef53d86bf8"
+    }
+  ],
+  "field_evidence": {},
+  "open_questions": [],
+  "pipeline_status": {
+    "discover": "PENDING",
+    "document": "PENDING",
+    "redevelop": "PENDING",
+    "validate": "PENDING",
+    "monitor": "PENDING"
+  },
+  "revalidation_required": false,
+  "created_at": "2026-11-16T13:38:13Z",
+  "updated_at": "2026-11-16T13:38:13Z"
+}

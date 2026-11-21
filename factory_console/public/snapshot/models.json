@@ -1,0 +1,88 @@
+{
+  "models": [
+    {
+      "model_id": "M001",
+      "model_name": "Credit Card PD Scorecard",
+      "model_type": null,
+      "language": "SAS",
+      "algorithm": null,
+      "business_line": "Cards",
+      "tier": null,
+      "doc_status": null,
+      "last_validated": "2023-02-14",
+      "pipeline_status": {
+        "discover": "PENDING",
+        "document": "PENDING",
+        "redevelop": "PENDING",
+        "validate": "PENDING",
+        "monitor": "PENDING"
+      },
+      "overall_rating": null,
+      "revalidation_required": false,
+      "active_run_id": null
+    },
+    {
+      "model_id": "M002",
+      "model_name": "Personal Loan PD Model",
+      "model_type": null,
+      "language": "R",
+      "algorithm": null,
+      "business_line": "Personal Loans",
+      "tier": null,
+      "doc_status": null,
+      "last_validated": "2022-01-10",
+      "pipeline_status": {
+        "discover": "PENDING",
+        "document": "PENDING",
+        "redevelop": "PENDING",
+        "validate": "PENDING",
+        "monitor": "PENDING"
+      },
+      "overall_rating": null,
+      "revalidation_required": false,
+      "active_run_id": null
+    },
+    {
+      "model_id": "M003",
+      "model_name": "Card Transaction Fraud Detector",
+      "model_type": null,
+      "language": "Python",
+      "algorithm": null,
+      "business_line": "Fraud Operations",
+      "tier": null,
+      "doc_status": null,
+      "last_validated": "2022-07-01",
+      "pipeline_status": {
+        "discover": "PENDING",
+        "document": "PENDING",
+        "redevelop": "PENDING",
+        "validate": "PENDING",
+        "monitor": "PENDING"
+      },
+      "overall_rating": null,
+      "revalidation_required": false,
+      "active_run_id": null
+    },
+    {
+      "model_id": "M004",
+      "model_name": "Personal Loan Risk Based Pricing",
+      "model_type": null,
+      "language": "SAS",
+      "algorithm": null,
+      "business_line": "Pricing",
+      "tier": null,
+      "doc_status": null,
+      "last_validated": "2020-03-30",
+      "pipeline_status": {
+        "discover": "PENDING",
+        "document": "PENDING",
+        "redevelop": "PENDING",
+        "validate": "PENDING",
+        "monitor": "PENDING"
+      },
+      "overall_rating": null,
+      "revalidation_required": false,
+      "active_run_id": null
+    }
+  ]
+}

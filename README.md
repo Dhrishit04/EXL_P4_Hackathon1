@@ -27,6 +27,8 @@ The full specification, including every API contract, is in [`docs/PROJECT_CONTE
 | `README.md` | Start here: what the project is, repository map, how to run it | Varun |
 | `.env.example` | Every setting, each with a comment | Varun |
 | `.gitignore` | Files git never tracks | Varun |
+| `docker-compose.yml` | Starts all four services with one command | Varun |
+| `.dockerignore` | Keeps `.env`, local builds and run outputs out of the images | Varun |
 | `docs/` | Project documents: `PROJECT_CONTEXT.md` (specification and contracts), `ARCHITECTURE.md`, `RESPONSIBLE_AI.md` | Varun |
 | `contracts/` | Example request and response for every API, generated from the project context | Varun |
 | `model_estate/` | The sample bank: legacy models, data, golden outputs | Dhrishit |
@@ -66,6 +68,9 @@ Each member works on `main` in their own fork of this repository, creates and ch
 ## Quick start
 
 Prerequisites: Python 3.11 or newer, Node.js with npm.
+
+
+**One command, with Docker.** `cp .env.example .env`, fill it in as in step 1, then `docker compose up --build`. Open http://localhost:5173. Run outputs land in `artifacts/` on your machine and the LLM reply caches stay in `factory_core/llm_cache/` and `redev_engine/llm_cache/`, so they survive restarts. The dashboard is built in live mode; set `VITE_API_MODE=mock` or `snapshot` in the root `.env` and rebuild to change it. Stop with `docker compose down`.
 
 1. Settings: `cp .env.example .env`. With a key, fill in `LLM_API_KEY` and `LLM_MODEL` and keep `LLM_MODE=live`. Without a key, set `LLM_MODE=replay` to use the recorded replies in `factory_core/llm_cache/` and `redev_engine/llm_cache/`.
 2. Start the services, each in its own terminal (commands below).

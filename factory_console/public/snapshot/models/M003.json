@@ -1,0 +1,56 @@
+{
+  "model_id": "M003",
+  "model_name": "Card Transaction Fraud Detector",
+  "model_type": null,
+  "purpose": null,
+  "business_line": "Fraud Operations",
+  "model_owner": "Head of Fraud Operations",
+  "language": "Python",
+  "algorithm": null,
+  "target_variable": null,
+  "input_variables": [],
+  "outputs": [],
+  "upstream_dependencies": [],
+  "downstream_uses": [],
+  "exposure_gbp_m": 95.0,
+  "regulatory_use": "none",
+  "customer_facing": true,
+  "tiering": null,
+  "doc_status": null,
+  "doc_last_updated": "2022-05-10",
+  "last_code_change": "2023-09-04",
+  "last_validated": "2022-07-01",
+  "next_validation_due": null,
+  "source_files": [
+    {
+      "path": "model_estate/M003_txn_fraud_gbm_py/code/train.py",
+      "kind": "code",
+      "lines": 34,
+      "sha256": "0bbe9cb7ab2ad64ca9c6bd6e1d6f0387e1c4fbd8d00e17717bb6cb704ca875f7"
+    },
+    {
+      "path": "model_estate/M003_txn_fraud_gbm_py/code/score.py",
+      "kind": "code",
+      "lines": 29,
+      "sha256": "422523d9f66b3304dceebff7819b61be3d204ec7e13989a5f56657dba942ea20"
+    },
+    {
+      "path": "model_estate/M003_txn_fraud_gbm_py/docs/model_document_2022.md",
+      "kind": "doc",
+      "lines": 48,
+      "sha256": "aebb52c2dc709e4db47b2667bbb8cc0af57d435f07b476a2200cf4ccde9dd1d5"
+    }
+  ],
+  "field_evidence": {},
+  "open_questions": [],
+  "pipeline_status": {
+    "discover": "PENDING",
+    "document": "PENDING",
+    "redevelop": "PENDING",
+    "validate": "PENDING",
+    "monitor": "PENDING"
+  },
+  "revalidation_required": false,
+  "created_at": "2026-11-16T13:38:13Z",
+  "updated_at": "2026-11-16T13:38:13Z"
+}

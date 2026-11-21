@@ -1,0 +1,6 @@
+{
+  "path": "model_estate/M003_txn_fraud_gbm_py/code/score.py",
+  "language": "python",
+  "lines": 29,
+  "content": "# score.py\n# Card fraud detector - score transactions and write decisions\n# 2022\n\nfrom pathlib import Path\n\nimport pandas as pd\n\nfrom train import DATA_DIR, build_matrix, train_model\n\nOUT_DIR = Path(__file__).resolve().parents[1] / \"golden\"\nTHRESHOLD = 0.06\n\n\ndef score_file(model, name):\n    df = pd.read_csv(DATA_DIR / (name + \".csv\"))\n    p = model.predict_proba(build_matrix(df))[:, 1]\n    out = pd.DataFrame({\"ID\": df[\"ID\"], \"pd\": p, \"score\": 0})\n    out[\"decision\"] = [\"DECLINE\" if x > THRESHOLD else \"APPROVE\" for x in p]\n    out.to_csv(OUT_DIR / (\"scored_\" + name + \"_legacy.csv\"), index=False, float_format=\"%.17g\")\n    return out\n\n\nif __name__ == \"__main__\":\n    model = train_model()\n    OUT_DIR.mkdir(exist_ok=True)\n    for name in [\"dev\", \"oot\"]:\n        res = score_file(model, name)\n        print(name, len(res), \"declined\", (res[\"decision\"] == \"DECLINE\").sum())\n"
+}

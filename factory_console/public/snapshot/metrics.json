@@ -1,0 +1,30 @@
+{
+  "models_total": 4,
+  "by_tier": {
+    "Tier 1": 0,
+    "Tier 2": 0,
+    "Tier 3": 0
+  },
+  "by_language": {
+    "SAS": 2,
+    "R": 1,
+    "Python": 1
+  },
+  "docs_outdated_at_discovery": 0,
+  "docs_generated": 0,
+  "avg_groundedness": null,
+  "parity_certificates_issued": 0,
+  "validations_completed": 0,
+  "open_findings": {
+    "HIGH": 0,
+    "MEDIUM": 0,
+    "LOW": 0
+  },
+  "revalidation_triggers": 0,
+  "avg_agent_minutes_per_model": null,
+  "human_review_minutes_logged": 0.0,
+  "manual_baseline_weeks_per_validation": [
+    8,
+    12
+  ]
+}

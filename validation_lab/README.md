@@ -14,6 +14,7 @@ Synthetic inputs let this folder run independently. They are not performance evi
 |---|---|
 | `README.md` | Setup, integration, limits and executable API examples |
 | `requirements.txt` | Pinned runtime and test dependencies |
+| `Dockerfile` | Container image for `docker compose up` at the repository root; built from the root so it keeps the repository layout |
 | `RESPONSIBLE_AI_INPUT.md` | Input for the team's Responsible AI note |
 | `app/` | Validation API and deterministic engines |
 | `app/main.py` | Health, validation, report and two monitoring endpoints; shared errors |

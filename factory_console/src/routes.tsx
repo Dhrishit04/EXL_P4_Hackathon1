@@ -3,6 +3,9 @@ import { lazy, Suspense } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import App from './App'
 
+const LandingPage = lazy(() =>
+  import('./pages/LandingPage').then((module) => ({ default: module.LandingPage })),
+)
 const DashboardPage = lazy(() =>
   import('./pages/DashboardPage').then((module) => ({ default: module.DashboardPage })),
 )
@@ -18,11 +21,11 @@ function PageLoading() {
 }
 
 export const router = createBrowserRouter([
+  { path: '/', element: <Suspense fallback={<PageLoading />}><LandingPage /></Suspense> },
   {
-    path: '/',
     element: <App />,
     children: [
-      { index: true, element: <Suspense fallback={<PageLoading />}><DashboardPage /></Suspense> },
+      { path: 'dashboard', element: <Suspense fallback={<PageLoading />}><DashboardPage /></Suspense> },
       { path: 'models', element: <Suspense fallback={<PageLoading />}><InventoryPage /></Suspense> },
       { path: 'models/:modelId', element: <Suspense fallback={<PageLoading />}><ModelDetailPage /></Suspense> },
     ],

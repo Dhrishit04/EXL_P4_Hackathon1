@@ -1,0 +1,62 @@
+{
+  "model_id": "M001",
+  "model_name": "Credit Card PD Scorecard",
+  "model_type": null,
+  "purpose": null,
+  "business_line": "Cards",
+  "model_owner": "Head of Cards Credit Risk",
+  "language": "SAS",
+  "algorithm": null,
+  "target_variable": null,
+  "input_variables": [],
+  "outputs": [],
+  "upstream_dependencies": [],
+  "downstream_uses": [],
+  "exposure_gbp_m": 1850.0,
+  "regulatory_use": "IRB",
+  "customer_facing": true,
+  "tiering": null,
+  "doc_status": null,
+  "doc_last_updated": "2021-03-01",
+  "last_code_change": "2023-06-20",
+  "last_validated": "2023-02-14",
+  "next_validation_due": null,
+  "source_files": [
+    {
+      "path": "model_estate/M001_cc_pd_scorecard_sas/code/01_prepare.sas",
+      "kind": "code",
+      "lines": 84,
+      "sha256": "cbc74747e37cd137c1eece9c4a8179207a085a333a57e799120fa1babb8570ff"
+    },
+    {
+      "path": "model_estate/M001_cc_pd_scorecard_sas/code/02_train.sas",
+      "kind": "code",
+      "lines": 26,
+      "sha256": "43882460a8af377a0aa8f5b4b4a37b9e6ac9aa922813a781802a56c1548d66b9"
+    },
+    {
+      "path": "model_estate/M001_cc_pd_scorecard_sas/code/03_score.sas",
+      "kind": "code",
+      "lines": 54,
+      "sha256": "0945a741143de42556969e4b1a7e4a6eae52cb5682e0f103963dea2b5169f53a"
+    },
+    {
+      "path": "model_estate/M001_cc_pd_scorecard_sas/docs/model_document_2021.md",
+      "kind": "doc",
+      "lines": 91,
+      "sha256": "8141fb44ac7c078146eee8bc25b3a5eea9384059a775f94702f22596f7d6f306"
+    }
+  ],
+  "field_evidence": {},
+  "open_questions": [],
+  "pipeline_status": {
+    "discover": "PENDING",
+    "document": "PENDING",
+    "redevelop": "PENDING",
+    "validate": "PENDING",
+    "monitor": "PENDING"
+  },
+  "revalidation_required": false,
+  "created_at": "2026-11-16T13:38:13Z",
+  "updated_at": "2026-11-16T13:38:13Z"
+}

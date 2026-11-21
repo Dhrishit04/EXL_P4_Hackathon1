@@ -27,6 +27,7 @@ How the three design rules are enforced here:
 |---|---|
 | `README.md` | This file |
 | `requirements.txt` | Pinned dependencies |
+| `Dockerfile` | Container image for `docker compose up` at the repository root; built from the root so it keeps the repository layout |
 | `app/main.py` | Entry point: creates the API, allows the dashboard origin, scans the estate and starts the pipeline runner at startup |
 | `app/config.py` | Settings from the root `.env`, repository root detection |
 | `app/database.py` | SQLite tables (models, runs, stage runs, stage outputs, audit events) and their read and write helpers |

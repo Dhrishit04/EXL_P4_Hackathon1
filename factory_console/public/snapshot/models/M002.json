@@ -1,0 +1,50 @@
+{
+  "model_id": "M002",
+  "model_name": "Personal Loan PD Model",
+  "model_type": null,
+  "purpose": null,
+  "business_line": "Personal Loans",
+  "model_owner": "Head of Personal Loans Credit Risk",
+  "language": "R",
+  "algorithm": null,
+  "target_variable": null,
+  "input_variables": [],
+  "outputs": [],
+  "upstream_dependencies": [],
+  "downstream_uses": [],
+  "exposure_gbp_m": 420.0,
+  "regulatory_use": "none",
+  "customer_facing": true,
+  "tiering": null,
+  "doc_status": null,
+  "doc_last_updated": "2020-09-15",
+  "last_code_change": "2021-11-08",
+  "last_validated": "2022-01-10",
+  "next_validation_due": null,
+  "source_files": [
+    {
+      "path": "model_estate/M002_loan_pd_glm_r/code/train_score.R",
+      "kind": "code",
+      "lines": 35,
+      "sha256": "b0a817738a6b1f1a79c6b7d5c95274dee5bafc8bdae1cc3a0874a7de5d317976"
+    },
+    {
+      "path": "model_estate/M002_loan_pd_glm_r/docs/model_document_2020.md",
+      "kind": "doc",
+      "lines": 52,
+      "sha256": "5b2be237aa6f35542c322d9c28c55aaa940f24c3cb857ed87984f71eb12403d2"
+    }
+  ],
+  "field_evidence": {},
+  "open_questions": [],
+  "pipeline_status": {
+    "discover": "PENDING",
+    "document": "PENDING",
+    "redevelop": "PENDING",
+    "validate": "PENDING",
+    "monitor": "PENDING"
+  },
+  "revalidation_required": false,
+  "created_at": "2026-11-16T13:38:13Z",
+  "updated_at": "2026-11-16T13:38:13Z"
+}
