@@ -178,16 +178,14 @@ function Field({
   onEvidence: (evidence: Evidence) => void
 }) {
   return (
-    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3 last:border-0 last:pb-0">
-      <span className="text-sm text-slate-500">{label}</span>
-      <span className="flex items-center gap-2 text-right text-sm font-medium text-slate-800">
-        {value}
-        {evidence && (
-          <button type="button" className="text-xs font-semibold text-teal-800 hover:underline" onClick={() => onEvidence(evidence)}>
-            Evidence
-          </button>
-        )}
-      </span>
+    <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-x-4 gap-y-1 border-b border-slate-100 pb-3 last:border-0 last:pb-0">
+      <span className="col-span-2 text-xs font-medium text-slate-500">{label}</span>
+      <span className="text-sm font-medium leading-6 text-slate-800">{value}</span>
+      {evidence && (
+        <button type="button" className="whitespace-nowrap text-xs font-semibold leading-6 text-teal-800 hover:underline" onClick={() => onEvidence(evidence)}>
+          Evidence
+        </button>
+      )}
     </div>
   )
 }
