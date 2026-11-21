@@ -52,7 +52,7 @@ The ModelPassport web dashboard. It runs in mock, live, and snapshot modes. Mock
 | `src/pages/` | Landing, dashboard, inventory, and model workspace screens. |
 | `src/pages/LandingPage.tsx` | Public landing page at `/`, built on screen by banna's cursors. |
 | `src/landing.css` | Landing page styles, adapted from the banna demo and scoped under `.landing`. |
-| `src/components/useBuildIn.ts` | Starts banna on the landing page and a light build of each console page header once per session. |
+| `src/components/useBuildIn.ts` | Starts and stops banna on the landing page; console pages stay static. |
 | `public/banna.js` | Vendored [banna](https://github.com/Rokhbin/banna) cursor-build script (MIT), patched so `Banna.start()` takes per-call options. |
 | `public/banna-LICENSE.txt` | banna's MIT license. |
 | `public/fonts/` | Vazirmatn Latin font for the landing page, with its SIL Open Font License. |
