@@ -22,6 +22,9 @@ __pycache__/
 coverage-*.xml
 htmlcov/
 .ipynb_checkpoints/
+fksdhf.txt
+factory_core/llm_cache
+redev_engine/llm_cache/
 
 # Python virtual environments
 .venv/
@@ -40,7 +43,13 @@ dist/
 *.tsbuildinfo
 npm-debug.log*
 
+# Browser test logs
+.playwright-mcp/
+
 # Operating system and editor files
 .DS_Store
 .idea/
 .vscode/
+
+# Personal demo prep notes
+DEMO_PREP_*.md

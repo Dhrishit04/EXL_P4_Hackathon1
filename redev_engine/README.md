@@ -30,6 +30,7 @@ Every number in the result is computed by code. The LLM only writes code, tests 
 |---|---|
 | `README.md` | This file |
 | `requirements.txt` | Pinned dependencies |
+| `Dockerfile` | Container image for `docker compose up` at the repository root; built from the root so it keeps the repository layout |
 | `docs/EVALUATION.md` | Measured results for the deck and how to reproduce them |
 | `docs/MODEL_ESTATE.md` | The sample model estate in `model_estate/`: models, folder map, how to regenerate data and golden outputs |
 | `docs/DATA_SOURCES.md` | Source, licence and citation of every dataset in the estate |

@@ -1,0 +1,6 @@
+{
+  "path": "model_estate/M003_txn_fraud_gbm_py/code/train.py",
+  "language": "python",
+  "lines": 34,
+  "content": "# train.py\n# Card fraud detector - train gradient boosting model on dev transactions\n# 2022\n\nfrom pathlib import Path\n\nimport pandas as pd\nfrom sklearn.ensemble import GradientBoostingClassifier\n\nDATA_DIR = Path(__file__).resolve().parents[1] / \"data\"\nFEATURES = [\"amount\", \"hour\", \"distance_from_home_km\", \"txn_count_24h\", \"card_present\"]\nCATEGORIES = [\"grocery\", \"fuel\", \"restaurant\", \"online_retail\", \"travel\", \"electronics\", \"cash_withdrawal\"]\n\n\ndef build_matrix(df):\n    X = df[FEATURES].copy()\n    for cat in CATEGORIES:\n        X[\"mcc_\" + cat] = (df[\"merchant_category\"] == cat).astype(int)\n    X[\"night\"] = (df[\"hour\"] < 6).astype(int)\n    return X\n\n\ndef train_model():\n    dev = pd.read_csv(DATA_DIR / \"dev.csv\")\n    model = GradientBoostingClassifier(\n        n_estimators=150, learning_rate=0.05, max_depth=3, subsample=0.8, random_state=7\n    )\n    model.fit(build_matrix(dev), dev[\"fraud_flag\"])\n    return model\n\n\nif __name__ == \"__main__\":\n    m = train_model()\n    print(\"trained\", m.n_estimators_, \"trees\")\n"
+}

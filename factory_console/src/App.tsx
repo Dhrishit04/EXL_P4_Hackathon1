@@ -4,9 +4,11 @@ import { ModeBanner } from './components/ModeBanner'
 import { ReviewerProvider } from './components/ReviewerProvider'
 import { Sidebar } from './components/Sidebar'
 import { Topbar } from './components/Topbar'
+import { useBuildIn } from './components/useBuildIn'
 
 /** Renders the console navigation, mode notice, and active route. */
 export default function App() {
+  useBuildIn()
   return (
     <ReviewerProvider>
       <div className="app-shell">

@@ -1,0 +1,6 @@
+{
+  "path": "model_estate/M001_cc_pd_scorecard_sas/code/02_train.sas",
+  "language": "sas",
+  "lines": 26,
+  "content": "/*******************************************************/\n/* PROGRAM : 02_TRAIN.SAS                              */\n/* PURPOSE : CARDS PD SCORECARD - FIT LOGISTIC MODEL   */\n/* DATE    : 2019                                      */\n/*******************************************************/\n\n%let path=/home/your_user_id/M001;\nlibname m001 \"&path\";\n\nods output ParameterEstimates=work.pe;\nproc logistic data=m001.dev_woe descending;\n  model default_flag = woe_util woe_payr woe_worst woe_arrears\n                       woe_trend woe_pay0 woe_limit woe_payavg;\nrun;\n\ndata m001.coef;\n  set work.pe(rename=(Variable=v Estimate=e));\n  length variable $32;\n  variable = v;\n  estimate = e;\n  format estimate best32.;\n  keep variable estimate;\nrun;\n\nproc export data=m001.coef outfile=\"&path/coefficients_legacy.csv\" dbms=csv replace;\nrun;\n"
+}

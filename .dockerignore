@@ -1,0 +1,17 @@
+# Keeps secrets, local builds and run outputs out of every image build context.
+.git
+.env
+.env.*
+!.env.example
+**/.venv*
+**/venv
+**/__pycache__
+**/*.py[cod]
+**/.pytest_cache
+**/node_modules
+**/dist
+**/llm_cache
+artifacts
+mlruns
+_local
+.DS_Store

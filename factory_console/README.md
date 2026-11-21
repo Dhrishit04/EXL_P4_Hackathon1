@@ -8,6 +8,7 @@ The ModelPassport web dashboard. It runs in mock, live, and snapshot modes. Mock
 
 | Path | Contents |
 | --- | --- |
+| `Dockerfile` | Builds the dashboard and serves it with nginx on port 5173 for `docker compose up` at the repository root. |
 | `src/` | Frontend application source. |
 | `src/api/` | Contract types, the factory_core client, and query hooks. |
 | `src/api/client.ts` | Public functions for every factory_core endpoint. |
@@ -48,8 +49,14 @@ The ModelPassport web dashboard. It runs in mock, live, and snapshot modes. Mock
 | `src/tabs/ComplianceTab.tsx` | Principle mapping and evidence coverage. |
 | `src/tabs/AuditTab.tsx` | Model-scoped audit events and hash-chain status. |
 | `src/mocks/` | JSON fixtures used by mock mode. |
-| `src/pages/` | Dashboard, inventory, and model workspace screens. |
-| `src/pages/DashboardPage.tsx` | Factory metrics, charts, scan action, and pipeline board. |
+| `src/pages/` | Landing, dashboard, inventory, and model workspace screens. |
+| `src/pages/LandingPage.tsx` | Public landing page at `/`, built on screen by banna's cursors. |
+| `src/landing.css` | Landing page styles, adapted from the banna demo and scoped under `.landing`. |
+| `src/components/useBuildIn.ts` | Starts banna on the landing page and a light build of each console page header once per session. |
+| `public/banna.js` | Vendored [banna](https://github.com/Rokhbin/banna) cursor-build script (MIT), patched so `Banna.start()` takes per-call options. |
+| `public/banna-LICENSE.txt` | banna's MIT license. |
+| `public/fonts/` | Vazirmatn Latin font for the landing page, with its SIL Open Font License. |
+| `src/pages/DashboardPage.tsx` | Served at `/dashboard`: factory metrics, charts, scan action, and pipeline board. |
 | `src/pages/InventoryPage.tsx` | Searchable and sortable model inventory. |
 | `src/pages/ModelDetailPage.tsx` | Selected model header and seven model workspaces. |
 | `src/formatting/` | Date, number, and status presentation helpers. |
@@ -83,6 +90,8 @@ The app starts in mock mode by default. To use factory_core, set `VITE_API_MODE=
 ```sh
 cp .env.example .env
 ```
+
+The landing page is at `/` and the console starts at `/dashboard`. Add `?nobanna` to any URL to turn the cursor build off; it never runs for visitors who ask for reduced motion.
 
 Open a model from the dashboard or inventory to use its Passport, Documentation, Redevelopment, Validation, Monitoring, Compliance, and Audit workspaces. The M001 fixtures demonstrate source evidence and result layouts; other models may intentionally show an unavailable-data state. In mock mode, runs pause at each human gate. Change the reviewer in the top bar before submitting a gate decision; the same reviewer cannot approve both redevelopment and validation.
 

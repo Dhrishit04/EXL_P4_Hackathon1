@@ -1,5 +1,5 @@
 /* Renders the console's primary navigation. */
-import { ClipboardList, LayoutDashboard, ShieldCheck } from 'lucide-react'
+import { ClipboardList, Home, LayoutDashboard, ShieldCheck } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 
 /** Shows the brand and navigation links for the console. */
@@ -13,7 +13,11 @@ export function Sidebar() {
         <span className="brand-name">ModelPassport</span>
       </div>
       <nav className="navigation" aria-label="Main navigation">
-        <NavLink to="/" end aria-label="Dashboard">
+        <NavLink to="/" end aria-label="Home">
+          <Home size={17} aria-hidden="true" />
+          <span className="navigation-label">Home</span>
+        </NavLink>
+        <NavLink to="/dashboard" end aria-label="Dashboard">
           <LayoutDashboard size={17} aria-hidden="true" />
           <span className="navigation-label">Dashboard</span>
         </NavLink>

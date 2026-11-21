@@ -1,0 +1,182 @@
+{
+  "model_id": "M004",
+  "disclaimer": "Simplified team mapping to the five SS1/23 principles for demonstration. Not a legal or regulatory assessment.",
+  "principles": [
+    {
+      "principle": "P1",
+      "title": "Model identification and model risk classification",
+      "items": [
+        {
+          "id": "P1_inventory",
+          "expectation": "The model is recorded in the inventory with owner, purpose and dependencies",
+          "status": "NOT_MET",
+          "evidence_path": null,
+          "note": "Not discovered yet"
+        },
+        {
+          "id": "P1_tiering",
+          "expectation": "A risk tier is assigned from materiality and complexity",
+          "status": "NOT_MET",
+          "evidence_path": null,
+          "note": "No tier yet"
+        },
+        {
+          "id": "P1_dependencies",
+          "expectation": "Upstream and downstream dependencies are recorded",
+          "status": "NOT_MET",
+          "evidence_path": null,
+          "note": "Not discovered yet"
+        }
+      ]
+    },
+    {
+      "principle": "P2",
+      "title": "Governance",
+      "items": [
+        {
+          "id": "P2_owner",
+          "expectation": "An accountable model owner is recorded",
+          "status": "NOT_MET",
+          "evidence_path": null,
+          "note": "No owner in the register"
+        },
+        {
+          "id": "P2_gate_approvals",
+          "expectation": "Approvals at each stage are recorded in a tamper evident audit trail",
+          "status": "NOT_MET",
+          "evidence_path": null,
+          "note": "No gate decision recorded yet"
+        },
+        {
+          "id": "P2_board",
+          "expectation": "Board and senior management oversight of the framework",
+          "status": "OUT_OF_SCOPE",
+          "evidence_path": null,
+          "note": "Organisational control, outside a prototype"
+        },
+        {
+          "id": "P2_policies",
+          "expectation": "Model risk policies and internal audit",
+          "status": "OUT_OF_SCOPE",
+          "evidence_path": null,
+          "note": "Organisational control, outside a prototype"
+        }
+      ]
+    },
+    {
+      "principle": "P3",
+      "title": "Model development, implementation and use",
+      "items": [
+        {
+          "id": "P3_purpose_design",
+          "expectation": "Purpose and design are documented",
+          "status": "NOT_MET",
+          "evidence_path": null,
+          "note": "Not documented yet"
+        },
+        {
+          "id": "P3_data",
+          "expectation": "Data and variables are documented",
+          "status": "NOT_MET",
+          "evidence_path": null,
+          "note": "Not documented yet"
+        },
+        {
+          "id": "P3_testing",
+          "expectation": "Development testing is evidenced (unit tests and parity)",
+          "status": "NOT_MET",
+          "evidence_path": null,
+          "note": "Not redeveloped"
+        },
+        {
+          "id": "P3_documentation_current",
+          "expectation": "Documentation is current and differences to the old document are listed",
+          "status": "NOT_MET",
+          "evidence_path": null,
+          "note": "Not documented yet"
+        },
+        {
+          "id": "P3_assumptions_limitations",
+          "expectation": "Assumptions and limitations are documented",
+          "status": "NOT_MET",
+          "evidence_path": null,
+          "note": "Not documented yet"
+        }
+      ]
+    },
+    {
+      "principle": "P4",
+      "title": "Independent model validation",
+      "items": [
+        {
+          "id": "P4_independent_approval",
+          "expectation": "Validation is approved by a reviewer independent of development",
+          "status": "NOT_MET",
+          "evidence_path": null,
+          "note": "Not validated yet"
+        },
+        {
+          "id": "P4_conceptual_soundness",
+          "expectation": "Conceptual soundness is reviewed",
+          "status": "NOT_MET",
+          "evidence_path": null,
+          "note": "Not validated yet"
+        },
+        {
+          "id": "P4_implementation",
+          "expectation": "The implementation is verified",
+          "status": "NOT_MET",
+          "evidence_path": null,
+          "note": "Not redeveloped yet"
+        },
+        {
+          "id": "P4_monitoring",
+          "expectation": "Performance monitoring is in place",
+          "status": "NOT_MET",
+          "evidence_path": null,
+          "note": "Not monitored yet"
+        },
+        {
+          "id": "P4_revalidation",
+          "expectation": "Revalidation schedule and triggers are defined",
+          "status": "NOT_MET",
+          "evidence_path": null,
+          "note": "No revalidation date or trigger yet"
+        }
+      ]
+    },
+    {
+      "principle": "P5",
+      "title": "Model risk mitigants",
+      "items": [
+        {
+          "id": "P5_findings",
+          "expectation": "Findings are recorded with recommendations",
+          "status": "NOT_MET",
+          "evidence_path": null,
+          "note": "Not validated yet"
+        },
+        {
+          "id": "P5_post_model_adjustments",
+          "expectation": "Post model adjustments are governed",
+          "status": "OUT_OF_SCOPE",
+          "evidence_path": null,
+          "note": "Outside the prototype"
+        },
+        {
+          "id": "P5_restriction",
+          "expectation": "Use is restricted when the rating is RED",
+          "status": "NOT_MET",
+          "evidence_path": null,
+          "note": "Not validated yet"
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "met": 0,
+    "partial": 0,
+    "not_met": 17,
+    "out_of_scope": 3
+  }
+}
